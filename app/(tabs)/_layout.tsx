@@ -7,7 +7,7 @@ import { useColorScheme } from '@/hooks/useColorScheme';
 import { Groups } from '../screens/Groups';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  // const colorScheme = useColorScheme();
 
   return (
     <Groups/>
