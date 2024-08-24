@@ -12,7 +12,8 @@ import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/
 
 import { ThemeProvider } from 'styled-components';
 import theme from '../theme';
-import { ActivityIndicator } from 'react-native';
+
+import { Loading } from '../components/Loading';
 
 
 export default function TabLayout() {
@@ -22,7 +23,7 @@ export default function TabLayout() {
 
   return (
     <ThemeProvider theme={theme}>
-      { fontsLoaded ? <Groups/> : <ActivityIndicator size={50}/> }
+      { fontsLoaded ? <Groups/> : <Loading/> }
     </ThemeProvider>
   );
 }
