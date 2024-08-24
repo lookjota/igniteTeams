@@ -4,19 +4,25 @@ import React from 'react';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+
+
 import { Groups } from '../screens/Groups';
 
+import { useFonts, Roboto_400Regular, Roboto_700Bold } from '@expo-google-fonts/roboto';
 
 import { ThemeProvider } from 'styled-components';
 import theme from '../theme';
+import { ActivityIndicator } from 'react-native';
 
 
 export default function TabLayout() {
   // const colorScheme = useColorScheme();
 
+  const [fontsLoaded] = useFonts({ Roboto_400Regular, Roboto_700Bold })
+
   return (
     <ThemeProvider theme={theme}>
-      <Groups/>
+      { fontsLoaded ? <Groups/> : <ActivityIndicator size={50}/> }
     </ThemeProvider>
   );
 }
